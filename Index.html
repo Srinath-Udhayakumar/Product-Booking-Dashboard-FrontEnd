@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Booking Dashboard</title>
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="CSS/style.css" />
+</head>
+
+<body>
+    <div id="dashboard-content">
+        <h1>Welcome to the Product Booking Dashboard 💫</h1>
+        <hr />
+        <p class="intro">
+            This demo platform allows you to view product details and check booking
+            availability.
+        </p>
+
+        <div class="action-buttons">
+            <button onclick="displaySamplePrice(100)">Check Sample Price</button>
+            <button onclick="resizeTable()">Adjust Table Size</button>
+            <button onclick="generateProductTable()">Generate Table</button>
+        </div>
+
+        <table id="product-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price (₹)</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="product-table-body">
+                <tr>
+                    <td>Wireless Earbuds</td>
+                    <td>Electronics</td>
+                    <td id="price1">1999</td>
+                    <td>Available</td>
+                    <td><button onclick="handleBooking(event)">Book Now</button></td>
+                </tr>
+                <tr>
+                    <td>Office Chair</td>
+                    <td>Furniture</td>
+                    <td id="price2">5499</td>
+                    <td>Out of Stock</td>
+                    <td><button onclick="handleBooking(event)">Book Now</button></td>
+                </tr>
+                <tr>
+                    <td>Smart Watch</td>
+                    <td>Electronics</td>
+                    <td id="price3">2999</td>
+                    <td>Available</td>
+                    <td><button onclick="handleBooking(event)">Book Now</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer>
+            <p>© 2023 Product Booking Dashboard. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
