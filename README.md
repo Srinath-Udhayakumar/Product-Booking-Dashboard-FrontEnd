@@ -1,129 +1,81 @@
 # Product Booking Dashboard
 
-A modern, responsive web application for viewing product details and managing product bookings. This dashboard provides an intuitive interface to browse products, check availability, and initiate booking requests.
+A responsive web application for managing product bookings and viewing product details. Built with vanilla JavaScript, HTML5, and CSS3, demonstrating core web development concepts with a clean, modern interface.
 
-## 📋 Table of Contents
+## 🚀 Technical Stack
 
-- [Features](#features)
-- [Demo](#demo)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features Explained](#features-explained)
-- [File Descriptions](#file-descriptions)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
+| Component | Technology |
+|-----------|------------|
+| Language | HTML5, CSS3, JavaScript (ES6+) |
+| Architecture | MVC Pattern (Client-Side) |
+| Database | Local Data Objects |
+| Build Tool | Vanilla JS (No dependencies) |
 
-## ✨ Features
+## ✨ Key Features
 
-- **Product Display**: View a curated list of products with categories, prices, and availability status
-- **Dynamic Table Generation**: Generate product tables dynamically from local data
-- **Booking System**: One-click booking requests for available products
-- **Price Display**: Real-time price information with rupee (₹) currency formatting
-- **Responsive Design**: Mobile-friendly interface that adapts to all screen sizes
-- **Interactive Controls**: Adjust table size and manage product display with easy-to-use buttons
-- **Professional UI**: Clean, modern design with smooth animations and transitions
+- **Product Display**: Browse products with categories, prices, and availability status
+- **Dynamic Table Generation**: Generate product tables from local data objects
+- **Booking System**: One-click booking with instant confirmation
+- **Responsive Design**: Mobile-friendly UI that adapts to all screen sizes
+- **Interactive Controls**: Adjust table size, check prices, and manage products dynamically
+- **Professional UI**: Clean design with smooth animations and hover effects
 
-## 🎯 Demo
+## 🛠️ Architecture and Design Highlights
 
-The application displays a dashboard with:
-- A welcoming header with emoji accent
-- Three action buttons for common operations
-- A product table with sortable columns
-- Individual product rows with booking functionality
-- Professional footer with copyright information
+This project follows a **Client-Side MVC Architecture** for clean separation of concerns:
 
-**Live Features:**
-- Check sample prices with the "Check Sample Price" button
-- Adjust table dimensions with the "Adjust Table Size" button
-- Generate product table dynamically using the "Generate Table" button
+**Model** (`productList`): Encapsulates product data with properties (name, category, price, status)
 
-## 🛠️ Technologies Used
+**View** (`index.html`): Dashboard with product table and interactive controls
 
-| Technology | Purpose |
-|-----------|---------|
-| **HTML5** | Semantic markup and structure |
-| **CSS3** | Styling and responsive design |
-| **JavaScript (ES6)** | Interactivity and dynamic functionality |
-| **Vanilla JS** | No external dependencies required |
+**Controller** (`main.js`): Handles user interactions, event listeners, and business logic
 
-## 📁 Project Structure
-
+### File Structure
 ```
 product-booking-dashboard/
-│
-├── index.html              # Main HTML file with dashboard structure
+├── index.html              # Main dashboard UI
 ├── CSS/
-│   └── style.css           # Stylesheet with responsive design
+│   └── style.css           # Responsive styling
 ├── scripts/
-│   └── main.js             # JavaScript functionality
-├── images/
-│   └── favicon.ico         # Website favicon
+│   └── main.js             # Core functionality and event handlers
 └── README.md               # Project documentation
 ```
 
-## 🚀 Installation
+## ⚙️ Setup and Installation
 
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, Edge)
+### 1. Prerequisites
+- Modern web browser (Chrome, Firefox, Safari, Edge)
 - No server setup required - runs entirely in the browser
 
-### Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/product-booking-dashboard.git
-   cd product-booking-dashboard
-   ```
-
-2. **Open the application**
-   - Open `index.html` directly in your web browser, or
-   - Use a live server extension (VS Code Live Server recommended)
-
-3. **Start using**
-   - The dashboard will load with sample products
-   - Use the action buttons to interact with the dashboard
-
-## 💻 Usage
-
-### Basic Operations
-
-**1. View Products**
-- The dashboard displays products in a table format upon page load
-- Each product shows: Name, Category, Price, and Availability Status
-
-**2. Check Sample Price**
-```javascript
-displaySamplePrice(100)  // Shows alert with sample price
+### 2. Installation
+Clone the repository:
+```bash
+git clone https://github.com/yourusername/product-booking-dashboard.git
+cd product-booking-dashboard
 ```
-- Click "Check Sample Price" button
-- View the sample price demonstration
 
-**3. Adjust Table Size**
-```javascript
-resizeTable()  // Toggles between 80% and 100% width
+### 3. Running the Application
+Open `index.html` directly in your browser or use a live server:
+```bash
+# Option 1: Direct open
+open index.html
+
+# Option 2: VS Code Live Server
+Right-click index.html → Open with Live Server
 ```
-- Click "Adjust Table Size" button
-- Table width toggles between 80% and 100%
 
-**4. Generate Dynamic Table**
-```javascript
-generateProductTable()  // Regenerates table from productList
-```
-- Click "Generate Table" button
-- Table is regenerated from the local product data
+## 💻 Usage Guide
 
-**5. Book a Product**
-- Click "Book Now" button next to any product
-- Receive confirmation with product details
-- Request is processed and logged
+### Core Functions
 
-## 📖 Features Explained
+| Function | Purpose | Parameters |
+|----------|---------|------------|
+| `displaySamplePrice(price)` | Display sample product price | `price` (number) |
+| `resizeTable()` | Toggle table width between 80% and 100% | None |
+| `handleBooking(event)` | Process booking requests | `event` (click event) |
+| `generateProductTable()` | Regenerate table from productList | None |
 
-### Product List
-The application uses a local product database:
+### Sample Product Data
 ```javascript
 const productList = [
     { name: "Wireless Earbuds", category: "Electronics", price: 1999, status: "Available" },
@@ -132,104 +84,8 @@ const productList = [
 ];
 ```
 
-### Core Functions
-
-**displaySamplePrice(price)**
-- Displays a sample product price
-- Parameters: `price` (number) - The price to display
-- Output: Alert popup with formatted price
-
-**resizeTable()**
-- Toggles table width between 80% and 100%
-- No parameters required
-- Useful for responsive layout testing
-
-**handleBooking(event)**
-- Processes booking requests
-- Parameters: `event` - The click event object
-- Extracts product name and shows confirmation
-- Logs booking action
-
-**generateProductTable()**
-- Creates table rows from `productList` array
-- Clears existing rows before regenerating
-- Dynamically generates rows for each product
-- Shows success confirmation
-
-## 📄 File Descriptions
-
-### index.html
-- Main entry point of the application
-- Contains semantic HTML5 structure
-- Includes dashboard layout with table and buttons
-- Links to CSS and JavaScript files
-- Sets up favicon and metadata
-
-### CSS/style.css
-- Professional color scheme (dark red theme - #b30000)
-- Responsive design with flexbox
-- Button hover effects and transitions
-- Table styling with alternating row colors
-- Mobile-friendly breakpoints
-
-### scripts/main.js
-- All interactive functionality
-- Product data storage
-- Event handlers for buttons and bookings
-- Dynamic table generation logic
-- DOM manipulation methods
-
-## 🎨 Design Highlights
-
-- **Color Scheme**: Professional dark red (#b30000) with neutral grays
-- **Typography**: Segoe UI font for modern appearance
-- **Layout**: Centered dashboard with maximum width constraint
-- **Interactivity**: Smooth transitions and hover effects
-- **Accessibility**: Semantic HTML and clear button labels
-
-## 🔄 Responsive Features
-
-The dashboard is fully responsive:
-- Desktop (1200px+): Full-width table with optimal spacing
-- Tablet (768px - 1199px): Adjusted padding and font sizes
-- Mobile (< 768px): Stacked layout with touch-friendly buttons
-
-## 🚀 Future Enhancements
-
-Potential features to improve the project:
-
-1. **Backend Integration**
-   - Connect to a database for real product data
-   - Implement API endpoints for CRUD operations
-
-2. **User Authentication**
-   - Login/signup functionality
-   - User-specific booking history
-   - Profile management
-
-3. **Search & Filter**
-   - Search products by name or category
-   - Filter by price range
-   - Sort by availability or price
-
-4. **Advanced Booking**
-   - Calendar date selection
-   - Quantity management
-   - Payment gateway integration
-
-5. **Notifications**
-   - Email confirmation for bookings
-   - Stock update notifications
-   - Booking status tracking
-
-6. **Analytics Dashboard**
-   - Popular products chart
-   - Booking trends
-   - User statistics
-
-## 📝 Code Examples
-
-### Adding a New Product
+### How to Extend
+Add new products to `productList`:
 ```javascript
 const newProduct = { 
     name: "Keyboard", 
@@ -241,51 +97,30 @@ productList.push(newProduct);
 generateProductTable();
 ```
 
-### Custom Booking Handler
-```javascript
-function handleBooking(event) {
-    const row = event.target.closest("tr");
-    const productName = row.children[0].innerText;
-    const price = row.children[2].innerText;
-    alert(`Booking confirmed for ${productName} at ${price}`);
-}
-```
+## 🎨 Design Highlights
 
-## 🤝 Contributing
+- **Color Scheme**: Professional dark red (#b30000) with neutral grays
+- **Typography**: Segoe UI font family for modern appearance
+- **Responsiveness**: Flexbox-based layout for mobile, tablet, and desktop
+- **Interactivity**: Smooth button hover effects and transitions
+- **Accessibility**: Semantic HTML and clear action labels
 
-Contributions are welcome! Follow these steps:
+## 🚀 Future Enhancements
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit changes: `git commit -m 'Add your feature'`
-4. Push to branch: `git push origin feature/your-feature`
-5. Submit a pull request
+- Backend API integration for real-time product data
+- User authentication and login system
+- Advanced search and filter functionality
+- Payment gateway integration
+- Order history and tracking
+- Admin dashboard for product management
+- Email confirmation for bookings
 
 ## 📄 License
 
-This project is licensed under the MIT License. See LICENSE file for details.
+MIT License - Free to use and modify
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Portfolio: [your-portfolio.com](https://your-portfolio.com)
-
-## 📞 Support
-
-For issues, questions, or suggestions:
-- Open an [Issue](https://github.com/yourusername/product-booking-dashboard/issues)
-- Contact via email: your.email@example.com
-- Check [Discussions](https://github.com/yourusername/product-booking-dashboard/discussions)
-
-## 🙏 Acknowledgments
-
-- Modern web development best practices
-- Responsive design principles
-- User experience optimization
-
----
-
-**Made with ❤️ by [Your Name]**
-
-Last Updated: October 2025
+**Srinath Udhayakumar**  
+Electronics and Communication Engineering Student | Web Developer  
+[GitHub](https://github.com/Srinath-Udhayakumar) | [LinkedIn](https://www.linkedin.com/in/srinath-udhayakumar-14sep2000)
